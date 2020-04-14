@@ -1,0 +1,17 @@
+{
+  "name": "DMS Mystifier",
+  "description": "This extension will mystify persoanl information in the DMS",
+  "version": "1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "dms.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://eas-dms.herokuapp.com/*","https://eas-dms-staging.herokuapp.com/*"],
+      "js": ["dms.js"]
+    }
+  ]
+}
