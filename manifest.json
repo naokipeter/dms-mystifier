@@ -10,6 +10,7 @@
   "permissions": ["storage"],
   "content_scripts": [
     {
+      "run_at": "document_end",
       "matches": ["https://eas-dms.herokuapp.com/*","https://eas-dms-staging.herokuapp.com/*"],
       "js": ["dms.js"]
     }
