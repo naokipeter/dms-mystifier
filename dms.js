@@ -1,5 +1,6 @@
-chrome.storage.sync.get('active', function(data) {
+chrome.storage.sync.get('active', data => {
   if (data.active) {
+    // List view
     document.querySelectorAll('.field-name:not(.form-row)').forEach(name => {
       name.innerText = 'John Doe';
     });
@@ -7,6 +8,7 @@ chrome.storage.sync.get('active', function(data) {
       email.innerText = 'john@doe.com';
     });
 
+    // Form view
     document.querySelectorAll('.field-name.form-row input').forEach(name => {
       name.type = "hidden";
       span = document.createElement("span");
@@ -17,7 +19,7 @@ chrome.storage.sync.get('active', function(data) {
     document.querySelectorAll('.form-row.field-primary_email input, .form-row.field-email input').forEach(email => {
       email.type = "hidden";
       span = document.createElement("span");
-      span.style.lineHeight = 2.3
+      span.style.lineHeight = 2.3;
       span.innerHTML = "john@doe.com";
       email.parentNode.append(span);
     });
